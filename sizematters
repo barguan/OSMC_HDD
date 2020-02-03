@@ -10,25 +10,25 @@ substring = ("S1", "S0",)
 
 movies_file_path   =  os.path.join(movies, f)
 series_file_path   =  os.path.join(series, f)
-source_file_path =  os.path.join(dirpath, f
+source_file_path =  os.path.join(dirpath, f)
 
 for dirpath, dnames, fnames in os.walk(root_path):
-	for f in fnames:
-		try:
-			if os.path.getsize(os.path.join(dirpath, f)) > 100000000:
-				shutil.move(source_file_path, movies_file_path)
-		except:
-			pass
+    for f in fnames:
+        try:
+	    if os.path.getsize(os.path.join(dirpath, f)) > 100000000:
+	    shutil.move(source_file_path, movies_file_path)
+	except:
+	    pass
 
 
 for i in substring:
-        for dirpath, dnames, fnames in os.walk(movies):
-                for f in fnames:
-                        try:
-                                if i in upper(f):
-                                        shutil.move(source_file_path, series_file_path)
-                        except:
-                                pass
+    for dirpath, dnames, fnames in os.walk(movies):
+        for f in fnames:
+            try:
+                if i in upper(f):
+                    shutil.move(source_file_path, series_file_path)
+            except:
+                pass
 			
 shutil.rmtree('/media/bodie/New Volume/completed', ignore_errors=True)
 os.mkdir('/media/bodie/New Volume/completed')
