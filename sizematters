@@ -1,0 +1,48 @@
+import os, shutil
+
+root_path = "/media/bodie/New Volume/completed"
+
+movies = "/media/bodie/New Volume/Movies"
+
+series = "/media/bodie/New Volume/Series"
+
+for dirpath, dnames, fnames in os.walk(root_path):
+	for f in fnames:
+		try:
+			if os.path.getsize(os.path.join(dirpath, f)) > 100000000:
+				source_file_path =  os.path.join(dirpath, f)
+				dest_file_path   =  os.path.join(movies, f)
+				shutil.move(source_file_path, dest_file_path)
+		except:
+			pass
+
+
+
+substring = "S1"
+for dirpath, dnames, fnames in os.walk(movies):
+	for f in fnames:
+		try:
+			if substring in f:
+				source_file_path =  os.path.join(dirpath, f)
+				dest_file_path   =  os.path.join(series, f)
+				shutil.move(source_file_path, dest_file_path)
+		except:
+			pass
+			
+
+substring = "S0"
+for dirpath, dnames, fnames in os.walk(movies):
+	for f in fnames:
+		try:
+			if substring in f:
+				source_file_path =  os.path.join(dirpath, f)
+				dest_file_path   =  os.path.join(series, f)
+				shutil.move(source_file_path, dest_file_path)
+		except:
+			pass
+
+shutil.rmtree('/media/bodie/New Volume/completed', ignore_errors=True)
+
+os.mkdir('/media/bodie/New Volume/completed')
+
+quit()
