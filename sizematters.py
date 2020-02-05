@@ -41,13 +41,12 @@ def movie_name():
 		os.rename(os.path.join(movies ,filename), os.path.join(movies, new_name.replace('.', ' ') + ext))
 
 def series_name():
-		for filename in os.listdir(series):   
-			ext = filename[-4:]
-			season_regex = re.search(r'[sS][0-9]{2}[eE][0-9]{2}', filename)
-			head, sep, tail = filename.partition(season_regex.group(0))
-			new_name = head + sep
-			print(new_name)
-			os.rename(os.path.join(series ,filename), os.path.join(series, new_name.replace('.', ' ') + ext))	
+	for filename in os.listdir(series):   
+		ext = filename[-4:]
+		season_regex = re.search(r'[sS][0-9]{2}[eE][0-9]{2}', filename)
+		head, sep, tail = filename.partition(season_regex.group(0))
+		new_name = head + sep
+		os.rename(os.path.join(series ,filename), os.path.join(series, new_name.replace('.', ' ') + ext))	
 
 movie_name()		
 
