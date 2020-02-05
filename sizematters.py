@@ -8,10 +8,6 @@ series = "/media/bodie/adf509fe-a05b-4d45-8b63-6d38305c48af/Series"
 
 seasonstr = ("S1", "S0",)
 
-
-
-
-
 for dirpath, dnames, fnames in os.walk(root_path):
     for f in fnames:
         try:
@@ -21,7 +17,6 @@ for dirpath, dnames, fnames in os.walk(root_path):
                 shutil.move(source_file_path, movies_file_path)
         except:
             pass
-
 
 for i in seasonstr:
     for dirpath, dnames, fnames in os.walk(movies):
