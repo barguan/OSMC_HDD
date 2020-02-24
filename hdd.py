@@ -87,7 +87,8 @@ for filename in os.listdir(series):
     series_dir()
     
 #Removes all remaining files in filetree completed. For removing samples/.txt/screenshots.
-    
+############################WARNING##############################
+#THIS WILL DELETE ANYTHING LEFT IN COMPLETED DIRECTORY. COMMENT OUT THE NEXT 2 LINES TO PREVENT    
 shutil.rmtree(root_path, ignore_errors=True)
 os.mkdir(root_path)      
 quit()
