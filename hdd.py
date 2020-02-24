@@ -2,11 +2,11 @@
 
 import os, shutil, re
 
-root_path = "/media/bodie/adf509fe-a05b-4d45-8b63-6d38305c48af/completed"
+root_path = "path/to/completed"
 
-movies = "/media/bodie/adf509fe-a05b-4d45-8b63-6d38305c48af/Movies"
+movies = "path/to/Movies"
 
-series = "/media/bodie/adf509fe-a05b-4d45-8b63-6d38305c48af/Series"
+series = "path/to/Series"
 
 #Move all files over 100mb to Movies folder including subtitle files < 100mb.
 
