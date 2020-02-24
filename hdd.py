@@ -16,7 +16,6 @@ def move_by_size():
             movies_file_path   =  os.path.join(movies, f)
             source_file_path =  os.path.join(dirpath, f)
             shutil.move(source_file_path, movies_file_path)
-            shutil.move(source_file_path, movies_file_path)
     except:
         pass
     
