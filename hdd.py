@@ -33,15 +33,14 @@ def move_seas():
 #Rename all movies to leave title and year   
                         
 def movie_name():
-    for filename in os.listdir(movies):
-        try:
-            ext = filename[-4:]
-            date_regex = re.search(r'[0-9]{4}', filename)
-            head, sep, tail = filename.partition(date_regex.group(0))
-            new_name = str.upper(head) + sep
-            os.rename(os.path.join(movies ,filename), os.path.join(movies, new_name.replace('.', ' ') + ext))
-        except:
-            pass
+    try:
+        ext = filename[-4:]
+        date_regex = re.search(r'[0-9]{4}', filename)
+        head, sep, tail = filename.partition(date_regex.group(0))
+        new_name = str.upper(head) + sep
+        os.rename(os.path.join(movies ,filename), os.path.join(movies, new_name.replace('.', ' ') + ext))
+    except:
+        pass
 
 #Rename all series leaving uniform title, season and episode
 
